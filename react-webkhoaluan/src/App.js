@@ -21,6 +21,23 @@ import AuthenticationService from './service/AuthenticationService';
 import { Link } from 'react-router-dom'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SuaNguoidung from './Nguoidung/suaNguoidung';
+import NopKhoaluan from './Nguoidung/nopKhoaluan';
+import ThemHoidong from './Nguoidung/themHoidong';
+import XemDangKyKL from './Nguoidung/xemDangKyKL';
+import XetduyetKhoaluan from './Nguoidung/xetduyetKhoaluan';
+import ChamDiem from './Nguoidung/chamDiem';
+import XemDiem from './Nguoidung/xemDiem';
+import XemKhoaluan from './Nguoidung/xemKhoaluan';
+import XemChitietKL from './Nguoidung/xemChitietKL';
+import ThongtinND from './Nguoidung/thongtinND';
+import Phancong from './Nguoidung/phancong';
+import XemChitietHD from './Nguoidung/xemChitietHD';
+import XemHoidongGV from './Nguoidung/xemHoidongGV';
+import XemKhoaluanHD from './Nguoidung/xemKhoaluanHD';
+import DsDetaiDK from './Nguoidung/dsDetaiDK';
+import CapnhatMK from './Nguoidung/capNhatMK';
+import DangNhap from './Nguoidung/dangNhap';
+
 class App extends Component {
 
   constructor(props) {
@@ -122,20 +139,38 @@ class App extends Component {
           <Routes>
             /* dùng chung */
             <Route exact path='/' element={<Home />} />
-            <Route exact path='/thongtincanhan/:id' element={<Thongtin />} />
+            {/* <Route exact path='/thongtincanhan/:id' element={<Thongtin />} /> -- */}
+            <Route exact path='/thongtinND/:id' element={<ThongtinND />} />
             <Route exact path='/dangnhap' element={<Login />} />
+            <Route exact path='/capNhatMK/:id' element={<CapnhatMK />} />       
+            <Route exact path='/detai' element={<DsDetai />} />  
+            
             /* sinh viên */
-            <Route exact path='/sinhvien/DangKyKhoaLuan' element={<DangKyKhoaLuan />} />
+            <Route exact path='/sinhvien/detai' element={<DsDetaiDK />} />
+            <Route exact path='/sinhvien/DangKyKhoaLuan/:id' element={<DangKyKhoaLuan />} />
+            <Route exact path='/sinhvien/NopKhoaLuan' element={<NopKhoaluan />} />
+            <Route exact path='/sinhvien/XemDiem/:id' element={<XemDiem />} /> --
+            --
             /* giảng viên */
+            <Route exact path='/giangvien/ChamDiem' element={<ChamDiem />} />
+            <Route exact path='/giangvien/Hoidong/:id' element={<XemHoidongGV />} />
+            
             /* quản trị  */
             <Route exact path='/quantri/QLTaiKhoan' element={<XemNguoidung />} />
             <Route exact path='/quantri/themNguoidung' element={<ThemNguoidung />} />
             <Route exact path='/quantri/suaNguoidung/:id' element={<SuaNguoidung />} /> 
             
             /* giáo vụ */
-            <Route exact path='/giaovu/Hoidong' element={<XemHoidong />} />      
-            <Route exact path='/giaovu/themDetai' element={<ThemDetai />} />   
-            <Route exact path='/detai' element={<DsDetai />} />   
+            <Route exact path='/giaovu/themHoidong' element={<ThemHoidong />} />               
+            <Route exact path='/giaovu/Hoidong' element={<XemHoidong />} />
+            <Route exact path='/giaovu/Hoidong/:id' element={<XemChitietHD />} />
+            <Route exact path='/giaovu/Phancong/:id' element={<Phancong /> } />      
+            <Route exact path='/giaovu/dsDangky' element={<XemDangKyKL />} /> 
+            <Route exact path='/giaovu/themDetai' element={<ThemDetai />} /> 
+            <Route exact path='/giaovu/dsKhoaluan' element={<XemKhoaluan />} />   
+            <Route exact path='/giaovu/dsKhoaluan/:id' element={<XemChitietKL />} /> 
+            <Route exact path='/giaovu/dsDangKy/:id' element={<XetduyetKhoaluan />} />  
+            <Route exact path='/dsKhoaLuan/:id' element={<XemKhoaluanHD />} />       
           </Routes>
         </div>
       <Footer />

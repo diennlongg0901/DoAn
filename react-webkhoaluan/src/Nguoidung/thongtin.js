@@ -15,12 +15,12 @@ export default class thongtin extends Component
     };
   }
 
-  componentDidMount() {
-    const currentUser = AuthenticationService.getCurrentUser();
+  // componentDidMount() {
+  //   const currentUser = AuthenticationService.getCurrentUser();
 
-    if (!currentUser) this.setState({ redirect: "/" });
-    this.setState({ currentUser: currentUser, userReady: true })
-  }
+  //   if (!currentUser) this.setState({ redirect: "/" });
+  //   this.setState({ currentUser: currentUser, userReady: true })
+  // }
   
   render(){
 
@@ -32,7 +32,7 @@ export default class thongtin extends Component
     
   return (
     <div className='container'>
-      {(this.state.userReady) ?
+      {/* {(this.state.userReady) ? */}
         <div className='row'>
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2'>
             
@@ -68,7 +68,8 @@ export default class thongtin extends Component
                   </Link>
                 </div>
             </div>
-        </div>:null}        
+        </div>        
+        {/* :null} */}
     </div>
   )
 }
